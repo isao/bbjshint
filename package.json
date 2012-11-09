@@ -3,11 +3,21 @@
   "version": "0.0.1",
   "description": "script to run jslint as a bbedit script on frontmost text document",
   "main": "index.js",
+  "bin": {
+    "bbjshint": "index.js"
+  },
   "dependencies": {
     "applescript": ">0.2",
     "jshint": ">0.9"
   },
-  "repository": "git://github.com/isao/bbjshint.git",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isao/bbjshint.git"
+  },
   "author": "Isao Yagi",
-  "license": "BSD"
+  "license": "MIT",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
