@@ -3,8 +3,6 @@
 'use strict';
 
 var fs = require('fs'),
-    exec = require('child_process').exec,
-
     hint = require('jshint').JSHINT,
     ascr = require('applescript'),
     note = require('terminal-notifier'),
