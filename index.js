@@ -1,12 +1,14 @@
-#!/usr/local/bin/node
-/*jslint stupid:true, node:true */
+#!/usr/bin/env node
+/*jshint node:true */
 'use strict';
 
 var fs = require('fs'),
     exec = require('child_process').exec,
+
     hint = require('jshint').JSHINT,
     ascr = require('applescript'),
     note = require('terminal-notifier'),
+
     fref = process.env.BB_DOC_PATH,
     fname = process.env.BB_DOC_NAME;
 
@@ -40,9 +42,11 @@ function errorScriptStr(listobj, fname) {
     ].join('\n');
 }
 
-function run(jsstr) {
+function run(err, jsstr) {
     var list;
-    if (hint(jsstr)) {
+    if (err) {
+        note("error. couldn't read bbedit document.");
+    } else if (hint(jsstr)) {
         note('no lint in ' + fname, {title: 'bbedit jshint'});
     } else {
         list = errorObj(hint.errors);
@@ -50,7 +54,7 @@ function run(jsstr) {
     }
 }
 
-run(fs.readFileSync(fref, 'utf-8'));
+if (require.main === module) fs.readFile(fref, 'utf-8', run);
 
 /*
     console.log(hint.errors)
