@@ -10,7 +10,8 @@ var fs = require('fs'),
     note = require('terminal-notifier'),
 
     fref = process.env.BB_DOC_PATH,
-    fname = process.env.BB_DOC_NAME;
+    fname = process.env.BB_DOC_NAME,
+    TITLE = 'bbedit jshint';
 
 
 function logerr(err) {
@@ -26,7 +27,7 @@ function errorObj(results) {
                 '{result_kind: "Error"',
                 'result_file: "' + fref + '"',
                 'result_line: ' + res.line,
-                'message: "' + res.reason.replace(/"/g, '\\"') + '"}'
+                'message: "' + res.reason.replace(/"/g, '\\"') + '"}' //escape
             ].join();
         out.push(item);
     });
@@ -37,24 +38,24 @@ function errorScriptStr(listobj, fname) {
     return [
         'tell application "BBEdit"',
         'set errs to ' + listobj,
-        'make new results browser with data errs with properties {name:"lint"}',
+        'make new results browser with data errs with properties {name:"' + TITLE +'"}',
         'end tell'
     ].join('\n');
 }
 
-function run(err, jsstr) {
-    var list;
+function run(err, str) {
     if (err) {
         note("error. couldn't read bbedit document.");
-    } else if (hint(jsstr)) {
-        note('no lint in ' + fname, {title: 'bbedit jshint'});
+    } else if (hint(str)) {
+        note('no lint in ' + fname, {title: TITLE});
     } else {
-        list = errorObj(hint.errors);
-        ascr.execString(errorScriptStr(list), logerr);
+        ascr.execString(errorScriptStr(errorObj(hint.errors)), logerr);
     }
 }
 
-if (require.main === module) fs.readFile(fref, 'utf-8', run);
+if (require.main === module) {
+    fs.readFile(fref, 'utf-8', run);
+}
 
 /*
     console.log(hint.errors)
