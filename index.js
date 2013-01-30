@@ -1,11 +1,12 @@
 #!/usr/local/bin/node
-'use strict';
 /*jslint stupid:true, node:true */
+'use strict';
 
 var fs = require('fs'),
     exec = require('child_process').exec,
     hint = require('jshint').JSHINT,
     ascr = require('applescript'),
+    note = require('terminal-notifier'),
     fref = process.env.BB_DOC_PATH,
     fname = process.env.BB_DOC_NAME;
 
@@ -39,14 +40,10 @@ function errorScriptStr(listobj, fname) {
     ].join('\n');
 }
 
-function notify(msg, cb) {
-    exec('terminal-notifier -title bbedit -message "' + msg + '"');
-}
-
 function run(jsstr) {
     var list;
     if (hint(jsstr)) {
-        notify('no lint in ' + fname);
+        note('no lint in ' + fname, {title: 'bbedit jshint'});
     } else {
         list = errorObj(hint.errors);
         ascr.execString(errorScriptStr(list), logerr);
