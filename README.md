@@ -10,7 +10,7 @@ Install
 
 Acknowledgements
 ----------------
-See [bbresults](../bbresults).
+See [bbresults](/isao/bbresults).
 
 License
 -------
