@@ -1,11 +1,9 @@
 {
   "name": "bbjshint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "script to run jslint as a bbedit script on frontmost text document",
   "main": "index.js",
-  "bin": {
-    "bbjshint": "index.js"
-  },
+  "bin": "index.js",
   "dependencies": {
     "bbresults": "*",
     "jshint": "~0.9.1"
@@ -20,6 +18,10 @@
     "type": "git",
     "url": "git://github.com/isao/bbjshint.git"
   },
-  "author": "Isao Yagi",
+  "keywords": [
+    "bbedit",
+    "applescript"
+  ],
+  "author": "Isao Yagi <isao.yagi@gmail.com>",
   "license": "MIT"
 }
