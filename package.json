@@ -7,18 +7,20 @@
     "bbjshint": "index.js"
   },
   "dependencies": {
-    "applescript": ">0.2",
-    "jshint": ">0.9",
+    "bbresults": "*",
+    "jshint": "~0.9.1",
     "terminal-notifier": "~0.1.0"
+  },
+  "devDependencies": {
+    "tape": "~0.2.2"
+  },
+  "scripts": {
+    "test": "node tests.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/isao/bbjshint.git"
   },
   "author": "Isao Yagi",
-  "license": "MIT",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "license": "MIT"
 }
