@@ -1,4 +1,4 @@
-BbJsHint [![Build Status](https://travis-ci.org/isao/bbjshint.png?branch=develop)](https://travis-ci.org/isao/bbjshint)
+BbJsHint [![Build Status](https://travis-ci.org/isao/bbjshint.png)](https://travis-ci.org/isao/bbjshint)
 ========
 
 Run [JSHint](http://jshint.com/) on the javascript code in your active [BBEdit](http://barebones.com/products/bbedit/) document, and see the results in a Result Browser window.
