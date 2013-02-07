@@ -11,6 +11,7 @@
   "devDependencies": {
     "tape": "~0.2.2"
   },
+  "os": ["darwin"],
   "scripts": {
     "test": "node tests.js"
   },
