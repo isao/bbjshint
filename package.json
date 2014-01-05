@@ -2,16 +2,17 @@
   "name": "bbjshint",
   "version": "0.0.2",
   "description": "Run JSLint on frontmost text document in BBEdit.",
-  "main": "index.js",
   "bin": "index.js",
   "dependencies": {
-    "bbresults": "*",
-    "jshint": "~0.9.1"
+    "bbresults": "~0.0.0",
+    "jshint": "*"
   },
   "devDependencies": {
     "tape": "~0.2.2"
   },
-  "os": ["darwin"],
+  "os": [
+    "darwin"
+  ],
   "scripts": {
     "test": "node tests.js"
   },
