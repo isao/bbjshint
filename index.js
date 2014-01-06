@@ -6,12 +6,12 @@ var fs = require('fs'),
     lint = require('jshint').JSHINT,
     opts = require('./jshint-flags'),
     bbresults = require('bbresults'),
+
+    title = 'JSHint results',
     pathname = process.env.BB_DOC_PATH;
 
 
 function run(err, str) {
-    var title = 'JSHint results';
-
     if (err) {
         bbresults.notify('error, reading ' + pathname, {title: title});
     } else if(lint(str, opts)) {
@@ -22,5 +22,9 @@ function run(err, str) {
 }
 
 if (require.main === module) {
-    fs.readFile(pathname, 'utf-8', run);
+    if (undefined === pathname) {
+        bbresults.notify('please save the document and try again', {title: title});
+    } else {
+        fs.readFile(pathname, 'utf-8', run);
+    }
 }
