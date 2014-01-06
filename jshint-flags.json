@@ -2,7 +2,6 @@
     "bitwise":      true,
     "curly":        true,
     "eqeqeq":       true,
-    "es5":          true,
     "esnext":       true,
     "globalstrict": true,
     "immed":        true,
@@ -16,5 +15,5 @@
     "onevar":       true,
     "plusplus":     true,
     "trailing":     true,
-    "undef":        true,
+    "undef":        true
 }
