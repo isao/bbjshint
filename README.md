@@ -1,12 +1,16 @@
-BbJsHint [![Build Status](https://travis-ci.org/isao/bbjshint.png)](https://travis-ci.org/isao/bbjshint)
+BbJsHint <!-- [![Build Status](https://travis-ci.org/isao/bbjshint.png)](https://travis-ci.org/isao/bbjshint) -->
 ========
 
-Run [JSHint](http://jshint.com/) on the javascript code in your active [BBEdit](http://barebones.com/products/bbedit/) document, and see the results in a Result Browser window.
+Run [JSHint](http://jshint.com/) on the javascript code in your frontmost (and saved) [BBEdit](http://barebones.com/products/bbedit/) document, and see the results in a Result Browser window.
+
+Note that for now, the text document must be saved before `bbjshint` can check it.
 
 Install
 -------
+
     npm i -g bbjshint
-    symlink to bbedit's scripts folder, assign hotkey
+    cd path/to/your/Application\ Support/BBEdit/Scripts
+    ln -s `which bbjshint`
 
 Acknowledgements
 ----------------
