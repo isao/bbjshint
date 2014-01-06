@@ -8,10 +8,10 @@ Note that for now, the text document must be saved before `bbjshint` can check i
 install
 -------
 
-Use from BBEdit's Scripts menu by either installing or symlinking `bbjshint` to BBEdit's Scripts folder. Usually, this is `~/Library/Application Support/BBEdit/Scripts` or `~/Dropbox/Application Support/BBEdit/Scripts`. You can show this folder from BBEdit by going to the scripts menu and choosing "Open Scripts Folder".
+Use from BBEdit's Scripts menu by either installing or symlinking `bbjshint` to BBEdit's Scripts folder. This is `~/Library/Application Support/BBEdit/Scripts` or perhaps `~/Dropbox/Application Support/BBEdit/Scripts`. You can show this folder from BBEdit by going to the scripts menu and choosing "Open Scripts Folder".
 
-    npm i -g bbjshint
-    cd path/to/your/Application\ Support/BBEdit/Scripts
+    npm install --global bbjshint
+    cd ~/Library/Application\ Support/BBEdit/Scripts
     ln -s `which bbjshint`
 
 acknowledgements
