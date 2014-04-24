@@ -11,23 +11,26 @@ var fs = require('fs'),
     pathname = process.env.BB_DOC_PATH;
 
 function getOptions(dir) {
-  if (dir === '/') {
-    return require('./jshint-flags');
-  }
+    var candidate, opts;
 
-  var candidate = path.join(dir, '.jshintrc');
-  if (fs.existsSync(candidate)) {
-    return JSON.parse(fs.readFileSync(candidate));
-  }
+    if (dir === '/') {
+        opts = require('./jshint-flags');
+    }
 
-  return getOptions(path.join(dir, '..'));
+    if (fs.existsSync(candidate = path.join(dir, '.jshintrc'))) {
+        opts = JSON.parse(fs.readFileSync(candidate));
+    }
+
+    return opts || getOptions(path.join(dir, '..'));
 }
 
 function run(err, str) {
     if (err) {
         bbresults.notify('error, reading ' + pathname, {title: title});
+
     } else if(lint(str, getOptions(path.dirname(pathname)))) {
         bbresults.notify(pathname + ' is lint free', {title: title});
+
     } else {
         bbresults.show(lint.errors, pathname, title);
     }
@@ -36,6 +39,7 @@ function run(err, str) {
 if (require.main === module) {
     if (undefined === pathname) {
         bbresults.notify('please save the document and try again', {title: title});
+
     } else {
         fs.readFile(pathname, 'utf-8', run);
     }
