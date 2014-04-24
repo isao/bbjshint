@@ -1,6 +1,6 @@
 {
   "name": "bbjshint",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Run JSLint on BBEdit's frontmost text document.",
   "bin": "index.js",
   "dependencies": {
