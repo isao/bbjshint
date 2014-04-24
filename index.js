@@ -3,18 +3,30 @@
 'use strict';
 
 var fs = require('fs'),
+    path = require('path'),
     lint = require('jshint').JSHINT,
-    opts = require('./jshint-flags'),
     bbresults = require('bbresults'),
 
     title = 'JSHint results',
     pathname = process.env.BB_DOC_PATH;
 
+function getOptions(dir) {
+  if (dir === '/') {
+    return require('./jshint-flags');
+  }
+
+  var candidate = path.join(dir, '.jshintrc');
+  if (fs.existsSync(candidate)) {
+    return JSON.parse(fs.readFileSync(candidate));
+  }
+
+  return getOptions(path.join(dir, '..'));
+}
 
 function run(err, str) {
     if (err) {
         bbresults.notify('error, reading ' + pathname, {title: title});
-    } else if(lint(str, opts)) {
+    } else if(lint(str, getOptions(path.dirname(pathname)))) {
         bbresults.notify(pathname + ' is lint free', {title: title});
     } else {
         bbresults.show(lint.errors, pathname, title);
