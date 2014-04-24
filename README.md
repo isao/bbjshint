@@ -14,6 +14,10 @@ Use from BBEdit's Scripts menu by either installing or symlinking `bbjshint` to 
     cd ~/Library/Application\ Support/BBEdit/Scripts
     ln -s `which bbjshint`
 
+contributors
+------------
+[Nate Silva](https://github.com/natesilva)
+
 acknowledgements
 ----------------
 See [bbresults](https://github.com/isao/bbresults).

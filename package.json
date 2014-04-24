@@ -27,5 +27,6 @@
     "jshint"
   ],
   "author": "Isao Yagi <isao.yagi@gmail.com>",
+  "contributors": ["Nate Silva (https://github.com/natesilva)"],
   "license": "MIT"
 }
