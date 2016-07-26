@@ -16,13 +16,13 @@ Use from BBEdit's Scripts menu by either installing or symlinking `bbjshint` to 
 
 usage
 -----
-Custom `.jshintrc` files can be used. They should be placed in the same directory as the original file with javascript code.
+Custom `.jshintrc` files can be used. They should be placed in the same directory as the original folder with javascript code.
 See: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
 
 contributors
 ------------
-[Nate Silva](https://github.com/natesilva)
-[Daniel Caspi](https://github.com/dxdc)
+- [Nate Silva](https://github.com/natesilva)
+- [Daniel Caspi](https://github.com/dxdc)
 
 acknowledgements
 ----------------
