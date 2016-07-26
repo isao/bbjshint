@@ -27,14 +27,10 @@ function getOptions(dir) {
 
 function run(err, str) {
     if (err) {
-        bbresults.notify('error, reading ' + pathname, {
-            title: title
-        });
+        bbresults.notify('error, reading ' + pathname, {title: title});
 
     } else if (lint(str, getOptions(path.dirname(pathname)))) {
-        bbresults.notify(pathname + ' is lint free', {
-            title: title
-        });
+        bbresults.notify(pathname + ' is lint free', {title: title});
 
     } else {
         bbresults.show(lint.errors, pathname, title);
@@ -43,9 +39,7 @@ function run(err, str) {
 
 if (require.main === module) {
     if (undefined === pathname) {
-        bbresults.notify('please save the document and try again', {
-            title: title
-        });
+        bbresults.notify('please save the document and try again', {title: title});
 
     } else {
         fs.readFile(pathname, 'utf-8', run);

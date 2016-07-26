@@ -1,6 +1,6 @@
 {
   "name": "bbjshint",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Run JSLint on BBEdit's frontmost text document.",
   "bin": "index.js",
   "dependencies": {
@@ -28,6 +28,9 @@
     "jshint"
   ],
   "author": "Isao Yagi <isao.yagi@gmail.com>",
-  "contributors": ["Nate Silva (https://github.com/natesilva)"],
+  "contributors": [
+    "Nate Silva (https://github.com/natesilva)",
+    "Daniel Caspi (https://github.com/dxdc)"
+  ],
   "license": "MIT"
 }
