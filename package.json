@@ -5,7 +5,8 @@
   "bin": "index.js",
   "dependencies": {
     "bbresults": "~0.0.0",
-    "jshint": ">0.9.0"
+    "jshint": ">0.9.0",
+    "strip-json-comments": "~2.0.1"
   },
   "devDependencies": {
     "tape": "~2.3.2"
