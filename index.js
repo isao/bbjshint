@@ -19,7 +19,7 @@ function getOptions(dir) {
     }
 
     if (fs.existsSync(candidate = path.join(dir, '.jshintrc'))) {
-        opts = JSON.parse(stripJsonComments(fs.readFileSync(candidate)));
+        opts = JSON.parse(stripJsonComments(fs.readFileSync(candidate, "utf8")));
     }
 
     return opts || getOptions(path.join(dir, '..'));
